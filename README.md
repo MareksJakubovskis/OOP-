@@ -2,8 +2,8 @@
 * Projekts demonstrē OOP pamatu lietojumu (atribūti, klases, metodes, konstruktoru, objekti)*
 
 **Darāmo darbu saraksts:**
-- [] Ieviest atribūtus 
-- [] Ieviest konstruktoru
+- [x] Ieviest atribūtus 
+- [x] Ieviest konstruktoru
 - [] Ieviest metodes
 - [] Ieviest galveno izvēlni
 - [] Ieviest darbu ar failiem
