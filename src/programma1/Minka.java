@@ -21,6 +21,7 @@ public class Minka {
 		this.vards = vards;
 		this.skirne = skirne;
 		this.spalvasKrasa = spalvasKrasa;
+		this.saimnieks = saimnieks;
 		vecums = Year.now().getValue() - dzGads;
 		medijumuSk = 0;
 		izsalkums = kungis();
@@ -60,5 +61,37 @@ public class Minka {
 		return vards + " ir " + vecums + " gadus vecs " + skirne + "šķirnes kaķis ar " + spalvasKrasa + " spalvas krasas kažoku. \nKaķim "+((siksnina) ? "ir" : "nav") + 
 				"sisksniņa.\n" + " kaķa saimnieks ir " + saimnieks + ".\nMedījumu skaits: "+medijumuSk;
 	}
-	 //Turpināsim ar metodēm...
+	 String pabarot(String ediens) {
+		 if(izsalkums > 0) {
+			 bilde = iestatitBildi("trauks");
+			 JOptionPane.showMessageDialog(null, "Ņam ņam ņam, man garšo " + ediens, "Informacija", JOptionPane.INFORMATION_MESSAGE, bilde);
+			 ediens = "Tukša bļoda";
+			 izsalkums --;
+			 
+			 
+			 
+		 } else {
+			 JOptionPane.showMessageDialog(null, "Murr, esmu pārēdies un " + ediens + " nevēlos!", "Brīdinājums", JOptionPane.WARNING_MESSAGE );
+			 izsalkums = kungis();
+			 
+		 }
+		 
+		 	return ediens;
+	 }
+	 	// Metožu pārslogošana
+	 void gulet() {
+		 JOptionPane.showMessageDialog(null, saimnieks + "! Aizmirsi man iedot sedziņu, nevarēšu pagulēt!", "FATAL ERROR", JOptionPane.ERROR_MESSAGE);
+	 }
+	 void gulet(String prieksmets) {
+		 if(prieksmets.equalsIgnoreCase("sedziņa")) {
+			 bilde = iestatitBildi("guļ");
+			 JOptionPane.showMessageDialog(null, "Zzzz....", "Informācija", JOptionPane.INFORMATION_MESSAGE, bilde );
+			 
+		 } else {
+			 JOptionPane.showMessageDialog(null, saimnieks + " ! " + prieksmets + "man neder gulēšanai! Ņau!", "Brīdinājums", JOptionPane.INFORMATION_MESSAGE);
+			 
+		 }
+	 }
+	 
+	 //Turpināsim nākošajā nodarbībā....
 }
