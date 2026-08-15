@@ -93,5 +93,33 @@ public class Minka {
 		 }
 	 }
 	 
-	 //Turpināsim nākošajā nodarbībā....
+	 void palielinatvecumu() {
+		 if(vecums < 20) {
+			 vecums ++;
+			 bilde = iestatitBildi("kuka.png");
+			 JOptionPane.showMessageDialog(null, vards + " Vecums palielināts par vienu gadu!", "Informācija", 
+					 JOptionPane.INFORMATION_MESSAGE, bilde);	
+			 
+		 } else 
+			 JOptionPane.showMessageDialog(null, "Ir sasniegts maksimālais vecums!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
+		 
+	 }
+	 
+	 
+	 void nolasitVecumu() {
+		 JOptionPane.showMessageDialog(null, vards + " ir "+vecums+" gadus vecs", "Informācija", JOptionPane.INFORMATION_MESSAGE);
+	 }
+	 
+	 void medit() {
+		 if((rand.nextInt(3))==0) {
+			 medijumuSk ++;
+			 bilde = iestatitBildi("nokerts");
+			 JOptionPane.showMessageDialog(null, "Medījums tika notverts!", "Veiksme", JOptionPane.INFORMATION_MESSAGE, bilde);
+					 
+		 } else {
+			 bilde = iestatitBildi("aizlaidas");
+			 JOptionPane.showMessageDialog(null, "Medījums aizlaidās!", "Neveiksme", JOptionPane.WARNING_MESSAGE, bilde);
+		 }
+	 }
+		 
 }
