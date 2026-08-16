@@ -72,7 +72,7 @@ public class MinkuTante {
 				+ File.separator + "Desktop" + File.separator+ "minkas.txt";
 		Minka runcis = null;
 		String[] darbibuSaraksts = {"Izveidot kaķi", "Izsaukt metodi", "Saglabāt failā",
-				"Apskatīt failā", "Apskatīt sagalabāto failu", "Apturēt programmu"};
+				"Apskatīt failā", "Apskatīt saglabāto failu", "Apturēt programmu"};
 		
 		do {
 			izvele = (String) JOptionPane.showInputDialog(null, 
@@ -101,12 +101,83 @@ public class MinkuTante {
 				
 				break;
 				
+			case "Saglabāt failā":
+				DarbsArFailu.saglabat(runcis, failaNosaukums);
+				break;
+			
+			case "Apskatīt saglabāto failu":
+				DarbsArFailu.nolasit(failaNosaukums);
+				break;
 				
-			}
+			case "Apturēt programmu":
+				JOptionPane.showMessageDialog(null, "Programma apturēta", "Uz tikšanos",
+						JOptionPane.INFORMATION_MESSAGE);
+				
+				
+				break;
+				
+				
+				
+			case "Izsaukt metodi":
+				String[] metozuSaraksts = {"Paglaudīt", "Nolasīt Atribūtus",
+						"Pabarot", "Nolikt gulēt", "Palielināt vecumu", "Apskatīt vecumu",
+						"Medīt"};
+				String metodes = (String) JOptionPane.showInputDialog(null, "Izvēlies metodi",
+						"Metožu izvēle", JOptionPane.QUESTION_MESSAGE, null, metozuSaraksts, metozuSaraksts[0]);
+				
+				if(metodes == null)
+					break;
+				
+			
+				
+				switch(metodes) {
+				case "Paglaudīt":
+					runcis.murrat();
+					break;
+					
+				case "Nolasīt Atribūtus":
+					JOptionPane.showMessageDialog(null, runcis.nolasitAtribututs(),
+							"Kaķa atribūti", JOptionPane.INFORMATION_MESSAGE);
+					break;
+					
+				case "Pabarot":
+					String atbilde = runcis.pabarot(virknesParbaude("Ar ko pabarot kaķi?", "Desa"));
+					JOptionPane.showMessageDialog(null, "Kaķis atgriež " + atbilde, "Informācija",
+							JOptionPane.INFORMATION_MESSAGE);
+					break;
+					
+				case "Nolikt gulēt":
+					String prieksmets = virknesParbaude("Ko dosi kaķim līdzi uz migu?", "Spilvens");
+					if(prieksmets == null || prieksmets.isEmpty())
+						runcis.gulet();
+					else 
+						runcis.gulet(prieksmets);						
+					break;
+					
+				case "Palielināt vecumu":
+					runcis.palielinatvecumu();
+					break;
+					
+				case "Apskatīt vecumu":
+					runcis.nolasitVecumu();
+					break;
+					
+				case "Medīt":
+					runcis.medit();
+					break;
+									
+									
+					
+				}
+				
+				}
+ 				
+				
+			
+	
 			
 			
-			
-		} while(!izvele.equals("Apturēt programmu"));
+		} while (!izvele.equals("Apturēt programmu"));
 	}	
 
 }
