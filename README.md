@@ -4,6 +4,6 @@
 **Darāmo darbu saraksts:**
 - [x] Ieviest atribūtus 
 - [x] Ieviest konstruktoru
-- [] Ieviest metodes
-- [] Ieviest galveno izvēlni
-- [] Ieviest darbu ar failiem
+- [x] Ieviest metodes
+- [x] Ieviest galveno izvēlni
+- [x] Ieviest darbu ar failiem
