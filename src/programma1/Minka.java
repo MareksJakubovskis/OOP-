@@ -8,7 +8,7 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class Minka {
+public class Minka{
 	//Atribūti
 	String vards, skirne, spalvasKrasa, saimnieks;
 	int vecums, medijumuSk, izsalkums;
